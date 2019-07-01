@@ -2,22 +2,35 @@ package com.example.notes1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth fAuth;
+    private RecyclerView mNotesList;
+    private GridLayoutManager gridLayoutManager;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mNotesList = findViewById(R.id.main_notes_list);
+
+
+
+
 
         fAuth = FirebaseAuth.getInstance();
         updateUI();
